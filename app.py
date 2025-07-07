@@ -70,10 +70,8 @@ def actualizar(filtro_materia):
     barr = px.bar(promedios,x="Carrera",y="Promedio",title="Promedio de notas por carrera",
                    color="Carrera",color_discrete_sequence=px.colors.qualitative.Prism).update_layout(template="ggplot2")
     return histo,disper,pi,barr
-
+#Es una prueba
 #Ejecutar la aplicacion
 if __name__ == '__main__':
     Estanotas.run(debug=True)
-
-
     
