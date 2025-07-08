@@ -8,11 +8,12 @@ Dataf = pd.read_excel('notas_estudiantes_limpio.xlsx')
 print(Dataf)
 
 #Inicializar la app
-Estanotas = dash.Dash(__name__)
-Estanotas.title = 'Estadistica notas'
+app = dash.Dash(__name__)
+app.title = 'Estadistica notas'
+
 
 #Crear el layout
-Estanotas.layout = html.Div([
+app.layout = html.Div([
     #Crear el titulo del tablero
     html.H1("Tablero de notas de estudiantes",style={"textAlign":"center",
                                                      "color":"#ee0eab",
@@ -42,7 +43,7 @@ Estanotas.layout = html.Div([
 
     ])
 #actualizar el grafico
-@Estanotas.callback(
+@app.callback(
         #Se llama los outputs creados en el layout
         Output("histograma","figure"),
         Output("dispersion","figure"),
@@ -73,5 +74,5 @@ def actualizar(filtro_materia):
 #Es una prueba
 #Ejecutar la aplicacion
 if __name__ == '__main__':
-    Estanotas.run(debug=True)
+    app.run(debug=True)
     
