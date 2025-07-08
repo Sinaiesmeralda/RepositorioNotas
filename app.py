@@ -10,7 +10,7 @@ print(Dataf)
 #Inicializar la app
 app = dash.Dash(__name__)
 app.title = 'Estadistica notas'
-
+Server = app.server
 
 #Crear el layout
 app.layout = html.Div([
